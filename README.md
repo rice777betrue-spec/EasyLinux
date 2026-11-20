@@ -6,6 +6,28 @@
 
 当前为测试版本，包含 159 条指令知识、13 个分类以及独立参数库。覆盖文件管理、文本、网络、Git、Docker、Make、GCC/G++、CMake、Ninja 和 Shell 脚本等场景。
 
+## 演示
+
+以下图片根据当前版本真实 PTY 会话输出渲染，已将本机路径替换为 `~/EasyLinux`。它们不是 Windows 宿主截图，不代表完成新的真实窗口缩放验收。每组都实际验证了 Tab 填入结果，执行计数保持不变。
+
+### 输入即推荐
+
+输入 `g`，显示完整候选指令、中文用途及必要的风险提示，最多 4 条。
+
+![输入 g 时的完整指令与中文解释](docs/screenshots/prefix.png)
+
+### 子命令与增量填入
+
+输入 `git st`，匹配 Git 子命令。Tab 填入后为 `git status`，不会重复已有前缀，也不会自动执行。
+
+![Git 子命令上下文与 Tab 增量填入](docs/screenshots/git-context.png)
+
+### 开发工具参数
+
+输入 `make -`，显示 Make 参数的中文含义和执行风险。参数候选依照当前命令作用域生成。
+
+![Make 参数推荐及中文风险提示](docs/screenshots/make-options.png)
+
 ## 启动
 
 需要 Linux（原生或 WSL）、Bash 5+、Python 3.10+、UTF-8 交互式终端，以及常见 Linux 基础工具。无需 pip 包。固定版本 ble.sh 已随仓库提供，启动时不下载或安装软件。
