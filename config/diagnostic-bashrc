@@ -1,0 +1,18 @@
+if [[ $EASYLINUX_DIAG_MODE == plugin ]]; then
+  source -- "$EASYLINUX_LAB/config/bashrc"
+  return
+fi
+HISTFILE="$EASYLINUX_LAB/logs/diagnostics/$EASYLINUX_SESSION_ID-history"
+PS1='\[\e[38;5;45m\]EasyLinux lab\[\e[0m\] \w\n\$ '
+PROMPT_COMMAND=
+set -o emacs
+if [[ $EASYLINUX_DIAG_MODE == ble ]]; then
+  source -- "$EASYLINUX_LAB/vendor/blesh/ble.sh" --attach=none --rcfile "$EASYLINUX_LAB/config/ble-only-rc"
+  ble-attach
+else
+  source -- "$EASYLINUX_LAB/adapters/bash/diagnostics.bash"
+  trap 'easylinux/diag/exit' EXIT
+  trap 'easylinux/diag native-hup; exit 129' HUP
+  trap 'easylinux/diag native-term; exit 143' TERM
+  trap '((++easylinux_winch_count)); easylinux/diag plain-winch' WINCH
+fi

@@ -1,0 +1,59 @@
+#!/bin/bash
+# Isolated EasyLinux formal-project session. Does not change PATH or parent settings.
+set -eu
+lab="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)"
+if [[ $(uname -s) != Linux || ${BASH_VERSINFO[0]} -lt 5 ]]; then
+  printf 'Linux Bash 5+ is required (native Linux or WSL).\n' >&2
+  exit 1
+fi
+command -v python3 >/dev/null || { printf 'Missing Python 3.10+.\n' >&2; exit 3; }
+python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3,10) else 1)' || {
+  printf 'Python 3.10+ required; nothing installed.\n' >&2; exit 3;
+}
+[[ -f "$lab/vendor/blesh/ble.sh" ]] || { printf 'Bundled ble.sh missing.\n' >&2; exit 3; }
+if [[ ! -t 0 || ! -t 1 || ! -t 2 ]]; then
+  printf 'Open an interactive terminal first; stdin/stdout/stderr must be TTYs.\n' >&2
+  exit 2
+fi
+# ble.sh can repair PATH if utilities are missing. Refuse instead in this lab.
+for utility in uname sed date rm mkdir mkfifo sleep stty tty sort awk chmod grep cat wc mv sh od cp ps; do
+  if ! type -P "$utility" >/dev/null; then
+    printf 'Missing required utility: %s; no software installed or PATH changed.\n' "$utility" >&2
+    exit 3
+  fi
+done
+# Recreate only this project's disposable runtime directories after an export.
+mkdir -p -- "$lab"/runtime/{config,cache,state,data,run,tmp} "$lab/logs"
+chmod 700 -- "$lab/runtime/run" "$lab/runtime/tmp"
+export EASYLINUX_LAB="$lab"
+export EASYLINUX_PROJECT="$lab"
+export XDG_CONFIG_HOME="$lab/runtime/config" XDG_CACHE_HOME="$lab/runtime/cache"
+export XDG_STATE_HOME="$lab/runtime/state" XDG_DATA_HOME="$lab/runtime/data"
+export XDG_RUNTIME_DIR="$lab/runtime/run"
+export TMPDIR="$lab/runtime/tmp" TMP="$lab/runtime/tmp" TEMP="$lab/runtime/tmp"
+export INPUTRC="$lab/config/inputrc" HISTFILE="$lab/logs/bash_history"
+# Ignore inherited startup hooks and inherited ble.sh session variables.
+unset BASH_ENV ENV BLE_SESSION_ID BLE_VERSION
+cd -- "$lab"
+export PYTHONDONTWRITEBYTECODE=1
+export EASYLINUX_SESSION_ID="${EASYLINUX_SESSION_ID:-$BASHPID-$EPOCHSECONDS}"
+export EASYLINUX_SESSION_LOG="$lab/logs/diagnostics/$EASYLINUX_SESSION_ID-bash.tsv"
+export EASYLINUX_CORE_LOG="$lab/logs/diagnostics/$EASYLINUX_SESSION_ID-core.jsonl"
+mkdir -p -- "$lab/logs/diagnostics"
+function launcher_event {
+  printf 'time=%s\tpid=%s\tppid=%s\tevent=%s\tstatus=%s\thost=%q\n' "$EPOCHREALTIME" "$BASHPID" "$PPID" "$1" "$2" "${EASYLINUX_HOST_KIND-unknown}" >> "$lab/logs/diagnostics/$EASYLINUX_SESSION_ID-launcher.tsv"
+}
+trap 'launcher_event launcher-exit "$?"' EXIT
+trap 'launcher_event launcher-hup 129; [[ ! ${child_pid-} ]] || builtin kill -HUP "$child_pid" 2>/dev/null; exit 129' HUP
+trap 'launcher_event launcher-term 143; [[ ! ${child_pid-} ]] || builtin kill -TERM "$child_pid" 2>/dev/null; exit 143' TERM
+launcher_event child-start 0
+set +e
+test_rc="$lab/config/bashrc"
+case ${EASYLINUX_DIAG_MODE-} in plain|ble|plugin) test_rc="$lab/config/diagnostic-bashrc" ;; esac
+/bin/bash --noprofile --rcfile "$test_rc" -i <&0 &
+child_pid=$!
+wait "$child_pid"
+
+child_status=$?
+launcher_event child-exit "$child_status"
+exit "$child_status"

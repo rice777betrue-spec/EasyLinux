@@ -1,0 +1,9 @@
+logs/
+runtime/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.swp
+.DS_Store

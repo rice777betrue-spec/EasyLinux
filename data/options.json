@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "scopes": [
+    {
+      "tokens": [
+        "git",
+        "status"
+      ],
+      "options": [
+        {
+          "name": "--short",
+          "description": "以简洁格式显示工作区状态",
+          "aliases": [
+            "-s"
+          ]
+        },
+        {
+          "name": "--branch",
+          "description": "显示分支和上游跟踪信息",
+          "aliases": [
+            "-b"
+          ]
+        },
+        {
+          "name": "--porcelain",
+          "description": "输出适合脚本处理的稳定状态格式",
+          "aliases": []
+        },
+        {
+          "name": "--ignored",
+          "description": "同时显示被忽略的文件",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "git",
+        "log"
+      ],
+      "options": [
+        {
+          "name": "--oneline",
+          "description": "每个提交显示一行摘要",
+          "aliases": []
+        },
+        {
+          "name": "--graph",
+          "description": "用文本图显示提交分支关系",
+          "aliases": []
+        },
+        {
+          "name": "--all",
+          "description": "查看所有引用可达的提交",
+          "aliases": []
+        },
+        {
+          "name": "-n",
+          "description": "限制显示的提交数量",
+          "aliases": [
+            "--max-count"
+          ],
+          "value_example": "10"
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "systemctl",
+        "status"
+      ],
+      "options": [
+        {
+          "name": "--no-pager",
+          "description": "直接输出而不进入分页器",
+          "aliases": []
+        },
+        {
+          "name": "--full",
+          "description": "不省略较长的单元名和日志行",
+          "aliases": [
+            "-l"
+          ]
+        },
+        {
+          "name": "--lines",
+          "description": "限制状态中显示的日志行数",
+          "aliases": [
+            "-n"
+          ],
+          "value_example": "50"
+        }
+      ],
+      "arguments": [
+        {
+          "name": "unit",
+          "example": "nginx",
+          "description": "示例单元 nginx：查看指定服务状态，需实际存在",
+          "repeat": false
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "docker",
+        "ps"
+      ],
+      "options": [
+        {
+          "name": "-a",
+          "description": "列出所有容器，包括已停止容器",
+          "aliases": [
+            "--all"
+          ]
+        },
+        {
+          "name": "--no-trunc",
+          "description": "完整显示容器 ID 等字段",
+          "aliases": []
+        },
+        {
+          "name": "-q",
+          "description": "只输出容器 ID",
+          "aliases": [
+            "--quiet"
+          ]
+        },
+        {
+          "name": "--size",
+          "description": "同时显示容器文件系统大小",
+          "aliases": [
+            "-s"
+          ]
+        },
+        {
+          "name": "--filter",
+          "description": "根据条件筛选容器",
+          "aliases": [
+            "-f"
+          ],
+          "value_example": "status=running"
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "make"
+      ],
+      "options": [
+        {
+          "name": "-j",
+          "description": "限制并行配方数；执行可信 Makefile，示例为 4，无数值会不限并发",
+          "aliases": [
+            "--jobs"
+          ],
+          "value_example": "4"
+        },
+        {
+          "name": "-f",
+          "description": "读取指定 Makefile 并执行其目标；文件必须可信",
+          "aliases": [
+            "--file",
+            "--makefile"
+          ],
+          "value_example": "Makefile"
+        },
+        {
+          "name": "-C",
+          "description": "先进入指定目录，再读取并执行可信 Makefile",
+          "aliases": [
+            "--directory"
+          ],
+          "value_example": "build"
+        },
+        {
+          "name": "-n",
+          "description": "通常只打印配方；递归 make、带 + 配方等仍可能执行",
+          "aliases": [
+            "--just-print",
+            "--dry-run",
+            "--recon"
+          ]
+        },
+        {
+          "name": "-k",
+          "description": "某目标失败后继续处理其他可构建目标",
+          "aliases": [
+            "--keep-going"
+          ]
+        },
+        {
+          "name": "--trace",
+          "description": "显示更新目标的原因及配方跟踪信息；仍会执行构建",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "gcc"
+      ],
+      "options": [
+        {
+          "name": "-c",
+          "description": "只编译和汇编，输出目标文件，不链接",
+          "aliases": []
+        },
+        {
+          "name": "-o",
+          "description": "指定输出文件，可能覆盖同名文件",
+          "aliases": [],
+          "value_example": "app"
+        },
+        {
+          "name": "-Wall",
+          "description": "启用一组常用警告，并非所有警告",
+          "aliases": []
+        },
+        {
+          "name": "-Wextra",
+          "description": "启用 Wall 之外的额外警告",
+          "aliases": []
+        },
+        {
+          "name": "-fsyntax-only",
+          "description": "只进行语法检查，不生成目标文件",
+          "aliases": []
+        },
+        {
+          "name": "-g",
+          "description": "生成调试信息，供调试器使用",
+          "aliases": []
+        },
+        {
+          "name": "-I",
+          "description": "增加头文件搜索目录",
+          "aliases": [],
+          "value_example": "include"
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "g++"
+      ],
+      "options": [
+        {
+          "name": "-c",
+          "description": "只编译和汇编，输出目标文件，不链接",
+          "aliases": []
+        },
+        {
+          "name": "-o",
+          "description": "指定输出文件，可能覆盖同名文件",
+          "aliases": [],
+          "value_example": "app"
+        },
+        {
+          "name": "-Wall",
+          "description": "启用一组常用警告，并非所有警告",
+          "aliases": []
+        },
+        {
+          "name": "-Wextra",
+          "description": "启用 Wall 之外的额外警告",
+          "aliases": []
+        },
+        {
+          "name": "-fsyntax-only",
+          "description": "只进行语法检查，不生成目标文件",
+          "aliases": []
+        },
+        {
+          "name": "-g",
+          "description": "生成调试信息，供调试器使用",
+          "aliases": []
+        },
+        {
+          "name": "-I",
+          "description": "增加头文件搜索目录",
+          "aliases": [],
+          "value_example": "include"
+        },
+        {
+          "name": "-std=c++17",
+          "description": "选择 C++17 语言标准，需 GCC 7 或更新版本",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "cmake"
+      ],
+      "options": [
+        {
+          "name": "-S",
+          "description": "指定包含 CMakeLists.txt 的可信源码目录；配置可能执行命令",
+          "aliases": [],
+          "value_example": "."
+        },
+        {
+          "name": "-B",
+          "description": "指定构建目录；配置会创建或修改构建文件",
+          "aliases": [],
+          "value_example": "build"
+        },
+        {
+          "name": "-G",
+          "description": "选择构建系统生成器；示例 Ninja 需安装 ninja-build",
+          "aliases": [],
+          "value_example": "Ninja"
+        },
+        {
+          "name": "-D",
+          "description": "定义 CMake 缓存变量；示例为 Debug 构建类型",
+          "aliases": [],
+          "value_example": "CMAKE_BUILD_TYPE=Debug"
+        },
+        {
+          "name": "--build",
+          "description": "调用已配置目录的构建工具；会执行项目构建命令",
+          "aliases": [],
+          "value_example": "build"
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "cmake",
+        "--build"
+      ],
+      "options": [],
+      "arguments": [
+        {
+          "name": "build_directory",
+          "example": "build",
+          "description": "示例已配置构建目录 build；必须实际存在",
+          "repeat": false
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "cmake",
+        "--build",
+        "build"
+      ],
+      "options": [
+        {
+          "name": "--parallel",
+          "description": "限制并行构建进程数，CMake 3.12+",
+          "aliases": [
+            "-j"
+          ],
+          "value_example": "4"
+        },
+        {
+          "name": "--target",
+          "description": "构建项目实际定义的目标；app 仅为示例",
+          "aliases": [
+            "-t"
+          ],
+          "value_example": "app"
+        },
+        {
+          "name": "--config",
+          "description": "为多配置生成器选择配置；单配置生成器主要在配置阶段决定",
+          "aliases": [],
+          "value_example": "Debug"
+        },
+        {
+          "name": "--verbose",
+          "description": "输出构建工具执行的命令，CMake 3.14+",
+          "aliases": [
+            "-v"
+          ]
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "ninja"
+      ],
+      "options": [
+        {
+          "name": "-C",
+          "description": "先进入含 build.ninja 的可信构建目录",
+          "aliases": [],
+          "value_example": "build"
+        },
+        {
+          "name": "-j",
+          "description": "限制并行构建任务数；0 表示不限数量",
+          "aliases": [],
+          "value_example": "4"
+        },
+        {
+          "name": "-f",
+          "description": "读取指定可信 Ninja 构建文件",
+          "aliases": [],
+          "value_example": "build.ninja"
+        },
+        {
+          "name": "-n",
+          "description": "预览构建命令而不执行它们",
+          "aliases": []
+        },
+        {
+          "name": "-v",
+          "description": "构建时显示完整命令行；仍会执行构建命令",
+          "aliases": [
+            "--verbose"
+          ]
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "bash",
+        "-n"
+      ],
+      "options": [],
+      "arguments": [
+        {
+          "name": "script",
+          "example": "script.sh",
+          "description": "示例 Bash 脚本路径，只检查语法，不执行正文；启动环境须可信",
+          "repeat": false
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "bash",
+        "-x"
+      ],
+      "options": [],
+      "arguments": [
+        {
+          "name": "script",
+          "example": "script.sh",
+          "description": "示例可信脚本路径：会执行脚本并打印跟踪，注意修改文件及敏感参数泄露",
+          "repeat": false
+        }
+      ]
+    },
+    {
+      "tokens": [
+        "shellcheck"
+      ],
+      "options": [
+        {
+          "name": "--shell",
+          "description": "指定分析使用的 Shell 方言",
+          "aliases": [
+            "-s"
+          ],
+          "value_example": "bash"
+        },
+        {
+          "name": "--severity",
+          "description": "设置报告的最低严重级别",
+          "aliases": [
+            "-S"
+          ],
+          "value_example": "warning"
+        },
+        {
+          "name": "--format",
+          "description": "选择检查结果输出格式",
+          "aliases": [
+            "-f"
+          ],
+          "value_example": "tty"
+        },
+        {
+          "name": "--external-sources",
+          "description": "静态分析时读取 source 引用文件，不执行脚本；注意文件访问范围",
+          "aliases": [
+            "-x"
+          ]
+        }
+      ],
+      "arguments": [
+        {
+          "name": "script",
+          "example": "script.sh",
+          "description": "示例待静态检查脚本路径，不执行脚本正文",
+          "repeat": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# ConHost compatibility: keep syntax warnings without a background fill.
+# Official face override; leave the pinned ble.sh and menu faces unchanged.
+# Underline also left horizontal residue in the real ConHost experiment.
+ble-face -s syntax_error 'fg=203'
+
+ble-import lib/core-complete
+bleopt complete_auto_complete= complete_auto_menu= complete_menu_filter=
+bleopt complete_menu_complete_opts= complete_menu_maxlines=20
+bleopt menu_desc_multicolumn_width= complete_menu_color=on complete_menu_color_match=on
+bleopt edit_bell=
+source -- "$EASYLINUX_LAB/adapters/bash/diagnostics.bash"
+source -- "$EASYLINUX_LAB/adapters/bash/core-client.bash"
+source -- "$EASYLINUX_LAB/adapters/bash/menu.bash"
+source -- "$EASYLINUX_LAB/adapters/bash/easylinux.bash"
+source -- "$EASYLINUX_LAB/adapters/bash/resize.bash"
+easylinux/bash/setup
+
+bleopt canvas_winch_action=redraw-prev
+case ${EASYLINUX_CANVAS_WINCH_ACTION-} in
+  redraw-here|redraw-prev|redraw-safe) bleopt canvas_winch_action="$EASYLINUX_CANVAS_WINCH_ACTION" ;;
+esac

@@ -1,0 +1,32 @@
+# Only used by bin/start-test; never sourced by the user's original bashrc.
+[[ $- == *i* && ${EASYLINUX_LAB-} ]] || return
+source -- "$EASYLINUX_LAB/vendor/blesh/ble.sh" --attach=none --rcfile "$EASYLINUX_LAB/config/blerc"
+HISTFILE="$EASYLINUX_LAB/logs/bash_history"
+HISTSIZE=1000
+HISTFILESIZE=2000
+HISTCONTROL=ignoredups
+PS1='\[\e[38;5;45m\]EasyLinux lab\[\e[0m\] \w\n\$ '
+PROMPT_COMMAND=
+set -o emacs
+easylinux_lab_exec_count=0
+function easylinux/lab/preexec {
+  ((++easylinux_lab_exec_count))
+  printf '%s\n' "$easylinux_lab_exec_count" >> "$EASYLINUX_LAB/logs/execution-events.log"
+}
+blehook PREEXEC+=easylinux/lab/preexec
+# Only the automated harness opts in; normal start-test retains ordinary Enter.
+if [[ ${EASYLINUX_TEST_GUARD-} == 1 ]]; then
+  function easylinux/lab/blocked {
+    printf 'BLOCKED %s\n' "$1" >> "$EASYLINUX_LAB/logs/guard.log"
+    return 126
+  }
+  function docker { easylinux/lab/blocked docker; }
+  function git { easylinux/lab/blocked git; }
+  function grep { easylinux/lab/blocked grep; }
+  function gzip { easylinux/lab/blocked gzip; }
+  function systemctl { easylinux/lab/blocked systemctl; }
+fi
+printf '\nEasyLinux friend test — Make Linux Easy.\n'
+printf '上下选择 · Tab 填入 · Esc 关闭 · Enter 正常执行（测试勿执行候选）\n'
+printf 'Ctrl-C 清空输入；Ctrl-D 在空行退出。所有数据保存在 %s\n\n' "$EASYLINUX_LAB"
+[[ ! ${BLE_VERSION-} ]] || ble-attach

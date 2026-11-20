@@ -1,0 +1,8 @@
+# Baseline: native ble.sh, no EasyLinux menu or Core.
+bleopt edit_bell=
+source -- "$EASYLINUX_LAB/adapters/bash/diagnostics.bash"
+function easylinux/diag/native-winch {
+  ((++easylinux_winch_count)); easylinux/diag native-winch
+}
+blehook internal_WINCH+=easylinux/diag/native-winch
+blehook EXIT+=easylinux/diag/exit

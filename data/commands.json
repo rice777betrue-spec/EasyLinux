@@ -1,0 +1,7397 @@
+[
+  {
+    "id": "linux.pwd.37fa2653",
+    "command": "pwd",
+    "description": "显示当前工作目录的绝对路径",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "pwd",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "pwd",
+        "description": "显示当前工作目录的绝对路径"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-P",
+        "description": "解析符号链接后显示物理目录"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "pwd",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ls.e5441b50",
+    "command": "ls -la",
+    "description": "列出目录中的所有文件及权限、大小等详细信息",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ls",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "ls -la",
+        "description": "列出目录中的所有文件及权限、大小等详细信息"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "显示详细信息"
+      },
+      {
+        "name": "-a",
+        "description": "包含隐藏文件"
+      }
+    ],
+    "root_priority": 95,
+    "context_priority": 60,
+    "source": {
+      "manual": "ls",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.cd.166e3e79",
+    "command": "cd 目录名",
+    "description": "切换当前 Bash 的工作目录",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cd",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "cd 目录名",
+        "description": "切换当前 Bash 的工作目录"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-",
+        "description": "切换到上一个工作目录"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "cd",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.mkdir.1bf3bffe",
+    "command": "mkdir -p 目录名",
+    "description": "创建目录并按需创建缺失的父目录",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "mkdir",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "mkdir -p 目录名",
+        "description": "创建目录并按需创建缺失的父目录"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "创建父目录且忽略已存在目录"
+      }
+    ],
+    "root_priority": 90,
+    "context_priority": 40,
+    "source": {
+      "manual": "mkdir",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.touch.937a80af",
+    "command": "touch 文件名",
+    "description": "创建空文件或更新已有文件的访问和修改时间",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "touch",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "touch 文件名",
+        "description": "创建空文件或更新已有文件的访问和修改时间"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "不创建不存在的文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "touch",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.cp.e9de3f3f",
+    "command": "cp -i 源文件 目标文件",
+    "description": "复制文件并在覆盖已有目标前询问",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cp",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "cp -i 源文件 目标文件",
+        "description": "复制文件并在覆盖已有目标前询问"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-i",
+        "description": "覆盖前询问"
+      },
+      {
+        "name": "-r",
+        "description": "递归复制目录"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "cp",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.mv.cb032d27",
+    "command": "mv -i 源文件 目标文件",
+    "description": "移动或重命名文件并在覆盖前询问",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "mv",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "mv -i 源文件 目标文件",
+        "description": "移动或重命名文件并在覆盖前询问"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-i",
+        "description": "覆盖前询问"
+      }
+    ],
+    "root_priority": 85,
+    "context_priority": 40,
+    "source": {
+      "manual": "mv",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.rm.fa83b4d1",
+    "command": "rm -i 文件名",
+    "description": "交互确认后删除指定文件",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "rm",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "rm -i 文件名",
+        "description": "交互确认后删除指定文件"
+      }
+    ],
+    "risk": "high",
+    "warning": "删除不可通过插件撤销，请检查目标路径并先备份。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-i",
+        "description": "逐项询问"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 40,
+    "source": {
+      "manual": "rm",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.rm.d15b79cd",
+    "command": "rm -rf 目录名",
+    "description": "递归强制删除指定目录及其内容",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "rm",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "rm -rf 目录名",
+        "description": "递归强制删除指定目录及其内容"
+      }
+    ],
+    "risk": "high",
+    "warning": "删除不可通过插件撤销，请检查目标路径并先备份。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-r",
+        "description": "递归删除"
+      },
+      {
+        "name": "-f",
+        "description": "不询问并忽略不存在路径"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 40,
+    "source": {
+      "manual": "rm",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.rmdir.96fd2cef",
+    "command": "rmdir 目录名",
+    "description": "删除一个空目录",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "rmdir",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "rmdir 目录名",
+        "description": "删除一个空目录"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "同时尝试删除空的父目录"
+      }
+    ],
+    "root_priority": 75,
+    "context_priority": 40,
+    "source": {
+      "manual": "rmdir",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.tree.401bedb4",
+    "command": "tree -L 2",
+    "description": "以树状结构显示当前目录两层内容",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "tree",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "tree -L 2",
+        "description": "以树状结构显示当前目录两层内容"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "tree"
+    ],
+    "parameters": [
+      {
+        "name": "-L",
+        "description": "限制显示层数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "tree",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/tree/tree.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.stat.b168d571",
+    "command": "stat 文件名",
+    "description": "显示文件类型、大小、权限及时间戳",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "stat",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "stat 文件名",
+        "description": "显示文件类型、大小、权限及时间戳"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "指定输出格式"
+      }
+    ],
+    "root_priority": 70,
+    "context_priority": 60,
+    "source": {
+      "manual": "stat",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ln.845313dd",
+    "command": "ln -s 目标路径 链接名",
+    "description": "创建指向目标路径的符号链接",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ln",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "ln -s 目标路径 链接名",
+        "description": "创建指向目标路径的符号链接"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-s",
+        "description": "创建符号链接"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "ln",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.realpath.df5d6dd8",
+    "command": "realpath 文件名",
+    "description": "解析路径中的相对部分和符号链接",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "realpath",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "realpath 文件名",
+        "description": "解析路径中的相对部分和符号链接"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-m",
+        "description": "允许部分路径不存在"
+      }
+    ],
+    "root_priority": 85,
+    "context_priority": 60,
+    "source": {
+      "manual": "realpath",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.cat.6bcfb957",
+    "command": "cat 文件名",
+    "description": "将文件内容输出到终端",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cat",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "cat 文件名",
+        "description": "将文件内容输出到终端"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "显示所有行的行号"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "cat",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.less.bbd26988",
+    "command": "less 文件名",
+    "description": "分页浏览文件内容并支持搜索",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "less",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "less 文件名",
+        "description": "分页浏览文件内容并支持搜索"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "less"
+    ],
+    "parameters": [
+      {
+        "name": "-N",
+        "description": "显示行号"
+      }
+    ],
+    "root_priority": 85,
+    "context_priority": 60,
+    "source": {
+      "manual": "less",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.head.d1f51efd",
+    "command": "head -n 20 文件名",
+    "description": "显示文件开头的二十行",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "head",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "head -n 20 文件名",
+        "description": "显示文件开头的二十行"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "指定显示行数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "head",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.tail.a0d8eece",
+    "command": "tail -f 文件名",
+    "description": "显示文件末尾并持续跟踪新增内容",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "tail",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "tail -f 文件名",
+        "description": "显示文件末尾并持续跟踪新增内容"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-f",
+        "description": "跟踪新增内容"
+      },
+      {
+        "name": "-n",
+        "description": "指定末尾行数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "tail",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.grep.d9235976",
+    "command": "grep \"关键词\" 文件名",
+    "description": "在文件中搜索指定内容",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "grep",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "grep \"关键词\" 文件名",
+        "description": "在文件中搜索指定内容"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "grep"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "显示匹配行号"
+      },
+      {
+        "name": "-i",
+        "description": "忽略大小写"
+      }
+    ],
+    "root_priority": 98,
+    "context_priority": 60,
+    "source": {
+      "manual": "grep",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.find.fef39622",
+    "command": "find . -type f",
+    "description": "递归查找当前目录下的普通文件",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "find",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "find . -type f",
+        "description": "递归查找当前目录下的普通文件"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "findutils"
+    ],
+    "parameters": [
+      {
+        "name": "-type",
+        "description": "按文件类型筛选"
+      }
+    ],
+    "root_priority": 95,
+    "context_priority": 60,
+    "source": {
+      "manual": "find",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.wc.0fa42f4a",
+    "command": "wc -l 文件名",
+    "description": "统计文件中的换行符数量",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "wc",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "wc -l 文件名",
+        "description": "统计文件中的换行符数量"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "统计换行符数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "wc",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.sort.88890ab6",
+    "command": "sort 文件名",
+    "description": "对文件各行排序后输出",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "sort",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "sort 文件名",
+        "description": "对文件各行排序后输出"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "按数字排序"
+      },
+      {
+        "name": "-r",
+        "description": "反向排序"
+      }
+    ],
+    "root_priority": 80,
+    "context_priority": 60,
+    "source": {
+      "manual": "sort",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.uniq.2c9aa992",
+    "command": "uniq -c 文件名",
+    "description": "合并相邻重复行并显示各组出现次数",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "uniq",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "uniq -c 文件名",
+        "description": "合并相邻重复行并显示各组出现次数"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "显示每组重复次数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "uniq",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.cut.4d3092b0",
+    "command": "cut -d \",\" -f 1 文件名",
+    "description": "按逗号分隔并输出每行第一字段",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cut",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "cut -d \",\" -f 1 文件名",
+        "description": "按逗号分隔并输出每行第一字段"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-d",
+        "description": "指定分隔字符"
+      },
+      {
+        "name": "-f",
+        "description": "选择字段"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "cut",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.awk.8a3dd707",
+    "command": "awk '{print $1}' 文件名",
+    "description": "按默认空白分隔并输出每行第一字段",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "awk",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "awk '{print $1}' 文件名",
+        "description": "按默认空白分隔并输出每行第一字段"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "gawk"
+    ],
+    "parameters": [
+      {
+        "name": "-F",
+        "description": "指定输入字段分隔符"
+      }
+    ],
+    "root_priority": 90,
+    "context_priority": 60,
+    "source": {
+      "manual": "awk",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.sed.b1a8c910",
+    "command": "sed -n '1,20p' 文件名",
+    "description": "只输出文件第一至第二十行",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "sed",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "sed -n '1,20p' 文件名",
+        "description": "只输出文件第一至第二十行"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "sed"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "关闭默认逐行输出"
+      }
+    ],
+    "root_priority": 78,
+    "context_priority": 60,
+    "source": {
+      "manual": "sed",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.diff.2e5df9e8",
+    "command": "diff -u 旧文件 新文件",
+    "description": "以统一格式比较两个文本文件的差异",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "diff",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "diff -u 旧文件 新文件",
+        "description": "以统一格式比较两个文本文件的差异"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "diffutils"
+    ],
+    "parameters": [
+      {
+        "name": "-u",
+        "description": "输出统一差异格式"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "diff",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.xargs.8f653087",
+    "command": "xargs -a 文件名 echo",
+    "description": "从文件读取参数并分批传给 echo",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "xargs",
+      "文本处理"
+    ],
+    "examples": [
+      {
+        "command": "xargs -a 文件名 echo",
+        "description": "从文件读取参数并分批传给 echo"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "findutils"
+    ],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "从指定文件读取参数"
+      },
+      {
+        "name": "-0",
+        "description": "用空字符分隔参数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "xargs",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.whoami.ef4957ec",
+    "command": "whoami",
+    "description": "显示当前有效用户的登录名",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "whoami",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "whoami",
+        "description": "显示当前有效用户的登录名"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "whoami",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.id.87ea5dfc",
+    "command": "id",
+    "description": "显示当前用户的用户编号、组编号及附加组",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "id",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "id",
+        "description": "显示当前用户的用户编号、组编号及附加组"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-u",
+        "description": "只显示用户编号"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "id",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.groups.0a894db7",
+    "command": "groups",
+    "description": "显示当前用户所属的用户组",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "groups",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "groups",
+        "description": "显示当前用户所属的用户组"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "groups",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.chmod.3fee8fe3",
+    "command": "chmod u+x 文件名",
+    "description": "给文件所有者增加执行权限",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "chmod",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "chmod u+x 文件名",
+        "description": "给文件所有者增加执行权限"
+      }
+    ],
+    "risk": "medium",
+    "warning": "权限变更可能影响访问或执行；递归操作影响整个目录树。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "u+x",
+        "description": "为所有者增加执行权限"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "chmod",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.chmod.e7ffbe5a",
+    "command": "chmod -R u+rwX 目录名",
+    "description": "递归给所有者增加读写权限并按条件增加执行权限",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "chmod",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "chmod -R u+rwX 目录名",
+        "description": "递归给所有者增加读写权限并按条件增加执行权限"
+      }
+    ],
+    "risk": "high",
+    "warning": "权限变更可能影响访问或执行；递归操作影响整个目录树。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-R",
+        "description": "递归处理目录树"
+      },
+      {
+        "name": "X",
+        "description": "仅对目录或已有执行位的文件增加执行权限"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "chmod",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.chown.61e2171c",
+    "command": "chown 用户名 文件名",
+    "description": "更改文件的所有者",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "chown",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "chown 用户名 文件名",
+        "description": "更改文件的所有者"
+      }
+    ],
+    "risk": "high",
+    "warning": "所有者变更可能影响服务访问，通常需要管理权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-R",
+        "description": "递归更改所有者"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "chown",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.sudo.9cae0eb5",
+    "command": "sudo -l",
+    "description": "列出当前用户被允许通过 sudo 执行的命令",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "sudo",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "sudo -l",
+        "description": "列出当前用户被允许通过 sudo 执行的命令"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "sudo"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "列出授权规则"
+      }
+    ],
+    "root_priority": 90,
+    "context_priority": 60,
+    "source": {
+      "manual": "sudo",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.su.ac5d0d8b",
+    "command": "su - 用户名",
+    "description": "启动指定用户的登录 Shell",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "su",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "su - 用户名",
+        "description": "启动指定用户的登录 Shell"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "util-linux"
+    ],
+    "parameters": [
+      {
+        "name": "-",
+        "description": "模拟登录环境"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "su",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.umask.4b824f44",
+    "command": "umask",
+    "description": "显示当前进程创建文件时的权限掩码",
+    "category": "用户与权限管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "umask",
+      "用户与权限管理"
+    ],
+    "examples": [
+      {
+        "command": "umask",
+        "description": "显示当前进程创建文件时的权限掩码"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-S",
+        "description": "以符号形式显示掩码"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "umask",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ps.f57ac96d",
+    "command": "ps aux",
+    "description": "显示系统进程及用户、CPU 和内存占用信息",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ps",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "ps aux",
+        "description": "显示系统进程及用户、CPU 和内存占用信息"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "aux",
+        "description": "以 BSD 风格显示所有用户进程详情"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "ps",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.top.af2c7b4c",
+    "command": "top",
+    "description": "交互查看进程及 CPU、内存实时占用",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "top",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "top",
+        "description": "交互查看进程及 CPU、内存实时占用"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "只监视指定进程编号"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "top",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.htop.33c82da5",
+    "command": "htop",
+    "description": "交互浏览进程并查看系统资源占用",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "htop",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "htop",
+        "description": "交互浏览进程并查看系统资源占用"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "htop"
+    ],
+    "parameters": [
+      {
+        "name": "-u",
+        "description": "筛选指定用户"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "htop",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/htop/htop.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.pgrep.02b0748f",
+    "command": "pgrep -a 进程名",
+    "description": "查找进程并显示编号和完整命令行",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "pgrep",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "pgrep -a 进程名",
+        "description": "查找进程并显示编号和完整命令行"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "显示完整命令行"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "pgrep",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.kill.c5c31f7e",
+    "command": "kill -TERM 进程编号",
+    "description": "请求指定进程正常终止",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "kill",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "kill -TERM 进程编号",
+        "description": "请求指定进程正常终止"
+      }
+    ],
+    "risk": "high",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-TERM",
+        "description": "发送可由程序处理的终止信号"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "kill",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.pkill.8aae0065",
+    "command": "pkill -TERM 进程名",
+    "description": "向名称匹配的进程发送终止请求",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "pkill",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "pkill -TERM 进程名",
+        "description": "向名称匹配的进程发送终止请求"
+      }
+    ],
+    "risk": "high",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "-TERM",
+        "description": "发送终止信号"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "pkill",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.jobs.437e1e6c",
+    "command": "jobs -l",
+    "description": "显示当前 Bash 的后台和暂停任务及进程编号",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "jobs",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "jobs -l",
+        "description": "显示当前 Bash 的后台和暂停任务及进程编号"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash 交互式会话"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "同时显示进程编号"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "jobs",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.bg.f415ec1d",
+    "command": "bg %1",
+    "description": "让当前 Shell 的第一项暂停任务在后台继续运行",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "bg",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "bg %1",
+        "description": "让当前 Shell 的第一项暂停任务在后台继续运行"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash 交互式会话"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "%1",
+        "description": "指定任务编号"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "bg",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.fg.dfcc2a34",
+    "command": "fg %1",
+    "description": "将当前 Shell 的第一项任务切回前台",
+    "category": "进程管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "fg",
+      "进程管理"
+    ],
+    "examples": [
+      {
+        "command": "fg %1",
+        "description": "将当前 Shell 的第一项任务切回前台"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash 交互式会话"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "%1",
+        "description": "指定任务编号"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "fg",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.systemctl.362af0c2",
+    "command": "systemctl status nginx",
+    "description": "查看 nginx 服务运行状态",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "systemctl",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "systemctl status nginx",
+        "description": "查看 nginx 服务运行状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd",
+      "nginx 为示例单元，需实际存在"
+    ],
+    "packages": [
+      "systemd"
+    ],
+    "parameters": [
+      {
+        "name": "status",
+        "description": "显示单元状态"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 100,
+    "source": {
+      "manual": "systemctl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.systemctl.dd193bd1",
+    "command": "systemctl start nginx",
+    "description": "启动 nginx 服务",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "systemctl",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "systemctl start nginx",
+        "description": "启动 nginx 服务"
+      }
+    ],
+    "risk": "high",
+    "warning": "操作可能中断服务，需要 systemd、目标单元及相应授权。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd",
+      "nginx 为示例单元，需实际存在"
+    ],
+    "packages": [
+      "systemd"
+    ],
+    "parameters": [
+      {
+        "name": "start",
+        "description": "启动指定单元"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 95,
+    "source": {
+      "manual": "systemctl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.systemctl.3cc5d053",
+    "command": "systemctl stop nginx",
+    "description": "停止 nginx 服务",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "systemctl",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "systemctl stop nginx",
+        "description": "停止 nginx 服务"
+      }
+    ],
+    "risk": "high",
+    "warning": "操作可能中断服务，需要 systemd、目标单元及相应授权。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd",
+      "nginx 为示例单元，需实际存在"
+    ],
+    "packages": [
+      "systemd"
+    ],
+    "parameters": [
+      {
+        "name": "stop",
+        "description": "停止指定单元"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 90,
+    "source": {
+      "manual": "systemctl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.systemctl.1063dce4",
+    "command": "systemctl restart nginx",
+    "description": "重启 nginx 服务",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "systemctl",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "systemctl restart nginx",
+        "description": "重启 nginx 服务"
+      }
+    ],
+    "risk": "high",
+    "warning": "操作可能中断服务，需要 systemd、目标单元及相应授权。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd",
+      "nginx 为示例单元，需实际存在"
+    ],
+    "packages": [
+      "systemd"
+    ],
+    "parameters": [
+      {
+        "name": "restart",
+        "description": "先停止再启动单元"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 85,
+    "source": {
+      "manual": "systemctl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.journalctl.7848a546",
+    "command": "journalctl -u nginx -n 50",
+    "description": "查看 nginx 服务最近五十条日志",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "journalctl",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "journalctl -u nginx -n 50",
+        "description": "查看 nginx 服务最近五十条日志"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd"
+    ],
+    "packages": [
+      "systemd"
+    ],
+    "parameters": [
+      {
+        "name": "-u",
+        "description": "按单元过滤"
+      },
+      {
+        "name": "-n",
+        "description": "限制日志条数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "journalctl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.uname.a103d79c",
+    "command": "uname -a",
+    "description": "显示内核名称、版本和硬件架构信息",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "uname",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "uname -a",
+        "description": "显示内核名称、版本和硬件架构信息"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "输出所有可用系统信息"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "uname",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.uptime.6772c61c",
+    "command": "uptime",
+    "description": "显示运行时间、登录用户数及系统平均负载",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "uptime",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "uptime",
+        "description": "显示运行时间、登录用户数及系统平均负载"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "以易读形式显示运行时间"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "uptime",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.free.ff2fde75",
+    "command": "free -h",
+    "description": "以易读单位显示内存和交换空间使用情况",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "free",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "free -h",
+        "description": "以易读单位显示内存和交换空间使用情况"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "procps"
+    ],
+    "parameters": [
+      {
+        "name": "-h",
+        "description": "自动选择容量单位"
+      }
+    ],
+    "root_priority": 90,
+    "context_priority": 60,
+    "source": {
+      "manual": "free",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.df.68e90d0f",
+    "command": "df -h",
+    "description": "以易读单位显示已挂载文件系统的容量",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "df",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "df -h",
+        "description": "以易读单位显示已挂载文件系统的容量"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-h",
+        "description": "自动选择容量单位"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "df",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.du.c9618040",
+    "command": "du -sh 目录名",
+    "description": "统计目录总磁盘占用并以易读单位显示",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "du",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "du -sh 目录名",
+        "description": "统计目录总磁盘占用并以易读单位显示"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-s",
+        "description": "只显示总计"
+      },
+      {
+        "name": "-h",
+        "description": "自动选择容量单位"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "du",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.date.b9adb784",
+    "command": "date -Iseconds",
+    "description": "以带时区的 ISO 8601 格式显示当前时间",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "date",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "date -Iseconds",
+        "description": "以带时区的 ISO 8601 格式显示当前时间"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-Iseconds",
+        "description": "精确到秒的 ISO 格式"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "date",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.reboot.531c9e1b",
+    "command": "reboot",
+    "description": "请求系统重新启动",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "reboot",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "reboot",
+        "description": "请求系统重新启动"
+      }
+    ],
+    "risk": "high",
+    "warning": "会立即请求重启并中断服务。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd"
+    ],
+    "packages": [
+      "systemd-sysv"
+    ],
+    "parameters": [],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "reboot",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.shutdown.30bd399d",
+    "command": "shutdown -h +10",
+    "description": "安排十分钟后停止系统并关机",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "shutdown",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "shutdown -h +10",
+        "description": "安排十分钟后停止系统并关机"
+      }
+    ],
+    "risk": "high",
+    "warning": "会安排系统停机并中断服务。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "systemd；WSL 需启用 systemd"
+    ],
+    "packages": [
+      "systemd-sysv"
+    ],
+    "parameters": [
+      {
+        "name": "-h",
+        "description": "停止并关机"
+      },
+      {
+        "name": "+10",
+        "description": "延后十分钟"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "shutdown",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.mkfs.ext4.fab6d2fd",
+    "command": "mkfs.ext4 分区设备",
+    "description": "在指定设备上创建 ext4 文件系统",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "mkfs.ext4",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "mkfs.ext4 分区设备",
+        "description": "在指定设备上创建 ext4 文件系统"
+      }
+    ],
+    "risk": "high",
+    "warning": "会重建文件系统并破坏目标设备原数据，必须确认设备与备份。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "e2fsprogs"
+    ],
+    "parameters": [],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "mke2fs",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.dd.3d6a00de",
+    "command": "dd if=输入镜像 of=输出镜像 bs=4M status=progress",
+    "description": "按块复制镜像文件并显示复制进度",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "dd",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "dd if=输入镜像 of=输出镜像 bs=4M status=progress",
+        "description": "按块复制镜像文件并显示复制进度"
+      }
+    ],
+    "risk": "high",
+    "warning": "输出路径写错会覆盖数据，严禁未经核对指向磁盘设备。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "if=",
+        "description": "输入文件"
+      },
+      {
+        "name": "of=",
+        "description": "输出文件"
+      },
+      {
+        "name": "bs=",
+        "description": "复制块大小"
+      },
+      {
+        "name": "status=progress",
+        "description": "显示进度"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "dd",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.ip.32f3e161",
+    "command": "ip address show",
+    "description": "显示网络接口的 IP 地址与状态",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ip",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "ip address show",
+        "description": "显示网络接口的 IP 地址与状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "iproute2"
+    ],
+    "parameters": [
+      {
+        "name": "address show",
+        "description": "列出接口地址"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "ip",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ip.67ca4bbc",
+    "command": "ip route show",
+    "description": "显示系统当前的 IP 路由表",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ip",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "ip route show",
+        "description": "显示系统当前的 IP 路由表"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "iproute2"
+    ],
+    "parameters": [
+      {
+        "name": "route show",
+        "description": "列出路由"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "ip",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ping.3c12b939",
+    "command": "ping -c 4 example.com",
+    "description": "向示例域名发送四次 ICMP 连通性探测",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ping",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "ping -c 4 example.com",
+        "description": "向示例域名发送四次 ICMP 连通性探测"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "iputils-ping"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "指定探测次数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "ping",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ss.a9335721",
+    "command": "ss -lnt",
+    "description": "列出正在监听的 TCP 端口及数字地址",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ss",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "ss -lnt",
+        "description": "列出正在监听的 TCP 端口及数字地址"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "iproute2"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "只显示监听端口"
+      },
+      {
+        "name": "-n",
+        "description": "不解析名称"
+      },
+      {
+        "name": "-t",
+        "description": "筛选 TCP"
+      }
+    ],
+    "root_priority": 75,
+    "context_priority": 60,
+    "source": {
+      "manual": "ss",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.curl.50daffc0",
+    "command": "curl -I https://example.com",
+    "description": "获取示例网站的 HTTP 响应头",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "curl",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "curl -I https://example.com",
+        "description": "获取示例网站的 HTTP 响应头"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "curl"
+    ],
+    "parameters": [
+      {
+        "name": "-I",
+        "description": "发送 HEAD 请求并显示响应头"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "curl",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.wget.e66c3c0e",
+    "command": "wget -O 页面.html https://example.com",
+    "description": "下载示例网页并保存为指定文件",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "wget",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "wget -O 页面.html https://example.com",
+        "description": "下载示例网页并保存为指定文件"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "wget"
+    ],
+    "parameters": [
+      {
+        "name": "-O",
+        "description": "指定输出文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "wget",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.hostname.709381e9",
+    "command": "hostname",
+    "description": "显示当前系统的主机名",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "hostname",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "hostname",
+        "description": "显示当前系统的主机名"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "hostname"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "hostname",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.nslookup.9ec875cb",
+    "command": "nslookup example.com",
+    "description": "查询示例域名的 DNS 解析结果",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "nslookup",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "nslookup example.com",
+        "description": "查询示例域名的 DNS 解析结果"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "bind9-dnsutils"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "nslookup",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/bind9-dnsutils/nslookup.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.traceroute.7809e773",
+    "command": "traceroute example.com",
+    "description": "探测到示例域名的网络路由路径",
+    "category": "网络管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "traceroute",
+      "网络管理"
+    ],
+    "examples": [
+      {
+        "command": "traceroute example.com",
+        "description": "探测到示例域名的网络路由路径"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "traceroute"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "traceroute",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/traceroute/traceroute.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.tar.4cdf6eae",
+    "command": "tar -czf 归档.tar.gz 目录名",
+    "description": "将目录打包并使用 gzip 压缩",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "tar",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "tar -czf 归档.tar.gz 目录名",
+        "description": "将目录打包并使用 gzip 压缩"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "tar"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "创建归档"
+      },
+      {
+        "name": "-z",
+        "description": "使用 gzip"
+      },
+      {
+        "name": "-f",
+        "description": "指定归档文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "tar",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.tar.c674e6ed",
+    "command": "tar -tzf 归档.tar.gz",
+    "description": "列出 gzip 压缩的 tar 归档内容",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "tar",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "tar -tzf 归档.tar.gz",
+        "description": "列出 gzip 压缩的 tar 归档内容"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "tar"
+    ],
+    "parameters": [
+      {
+        "name": "-t",
+        "description": "列出内容"
+      },
+      {
+        "name": "-z",
+        "description": "使用 gzip"
+      },
+      {
+        "name": "-f",
+        "description": "指定归档文件"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "tar",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.gzip.ef4e96f6",
+    "command": "gzip 文件名",
+    "description": "使用 gzip 压缩文件",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gzip",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "gzip 文件名",
+        "description": "使用 gzip 压缩文件"
+      }
+    ],
+    "risk": "medium",
+    "warning": "默认用压缩文件替换原文件，可用 -k 保留原始文件。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "gzip"
+    ],
+    "parameters": [
+      {
+        "name": "-k",
+        "description": "保留原始文件"
+      }
+    ],
+    "root_priority": 97,
+    "context_priority": 40,
+    "source": {
+      "manual": "gzip",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.gunzip.b833e551",
+    "command": "gunzip 文件名.gz",
+    "description": "解压 gzip 文件并恢复原始内容",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gunzip",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "gunzip 文件名.gz",
+        "description": "解压 gzip 文件并恢复原始内容"
+      }
+    ],
+    "risk": "medium",
+    "warning": "默认用解压结果替换压缩文件，需核对输出位置。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "gzip"
+    ],
+    "parameters": [
+      {
+        "name": "-k",
+        "description": "保留原始压缩文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "gunzip",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.zip.e1f51c92",
+    "command": "zip -r 归档.zip 目录名",
+    "description": "递归压缩目录并写入 ZIP 归档",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "zip",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "zip -r 归档.zip 目录名",
+        "description": "递归压缩目录并写入 ZIP 归档"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "zip"
+    ],
+    "parameters": [
+      {
+        "name": "-r",
+        "description": "递归处理目录"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "zip",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/zip/zip.1.en.html"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.unzip.44f60554",
+    "command": "unzip -l 归档.zip",
+    "description": "列出 ZIP 归档内容而不解压",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "unzip",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "unzip -l 归档.zip",
+        "description": "列出 ZIP 归档内容而不解压"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "unzip"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "只列出文件"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "unzip",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/unzip/unzip.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.xz.54672199",
+    "command": "xz -k 文件名",
+    "description": "使用 xz 压缩文件并保留原文件",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "xz",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "xz -k 文件名",
+        "description": "使用 xz 压缩文件并保留原文件"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "xz-utils"
+    ],
+    "parameters": [
+      {
+        "name": "-k",
+        "description": "保留输入文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "xz",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.zcat.7290f08f",
+    "command": "zcat 文件名.gz",
+    "description": "将 gzip 文件解压到标准输出而不改写原文件",
+    "category": "压缩与归档",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "zcat",
+      "压缩与归档"
+    ],
+    "examples": [
+      {
+        "command": "zcat 文件名.gz",
+        "description": "将 gzip 文件解压到标准输出而不改写原文件"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "gzip"
+    ],
+    "parameters": [],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "zcat",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.apt.1d41178a",
+    "command": "apt search 软件名",
+    "description": "搜索可用的软件包名称和描述",
+    "category": "软件包管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "apt",
+      "软件包管理"
+    ],
+    "examples": [
+      {
+        "command": "apt search 软件名",
+        "description": "搜索可用的软件包名称和描述"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "Debian/Ubuntu"
+    ],
+    "packages": [
+      "apt"
+    ],
+    "parameters": [
+      {
+        "name": "search",
+        "description": "按关键词搜索"
+      }
+    ],
+    "root_priority": 95,
+    "context_priority": 60,
+    "source": {
+      "manual": "apt",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.apt.7dcafa27",
+    "command": "apt show 软件名",
+    "description": "查看软件包版本、依赖及描述",
+    "category": "软件包管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "apt",
+      "软件包管理"
+    ],
+    "examples": [
+      {
+        "command": "apt show 软件名",
+        "description": "查看软件包版本、依赖及描述"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "Debian/Ubuntu"
+    ],
+    "packages": [
+      "apt"
+    ],
+    "parameters": [
+      {
+        "name": "show",
+        "description": "显示软件包信息"
+      }
+    ],
+    "root_priority": 95,
+    "context_priority": 60,
+    "source": {
+      "manual": "apt",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.apt.1a716146",
+    "command": "apt install 软件名",
+    "description": "安装指定软件包及其依赖",
+    "category": "软件包管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "apt",
+      "软件包管理"
+    ],
+    "examples": [
+      {
+        "command": "apt install 软件名",
+        "description": "安装指定软件包及其依赖"
+      }
+    ],
+    "risk": "high",
+    "warning": "可能改变系统软件和依赖，需要管理员授权。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "Debian/Ubuntu"
+    ],
+    "packages": [
+      "apt"
+    ],
+    "parameters": [
+      {
+        "name": "install",
+        "description": "安装软件包"
+      }
+    ],
+    "root_priority": 75,
+    "context_priority": 40,
+    "source": {
+      "manual": "apt",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.apt-get.b05f96a2",
+    "command": "apt-get update",
+    "description": "刷新软件包索引而不升级已安装软件",
+    "category": "软件包管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "apt-get",
+      "软件包管理"
+    ],
+    "examples": [
+      {
+        "command": "apt-get update",
+        "description": "刷新软件包索引而不升级已安装软件"
+      }
+    ],
+    "risk": "high",
+    "warning": "更新系统软件索引，通常需要管理员权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "Debian/Ubuntu"
+    ],
+    "packages": [
+      "apt"
+    ],
+    "parameters": [
+      {
+        "name": "update",
+        "description": "更新本地索引"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "apt-get",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.dpkg.d7ee7c1b",
+    "command": "dpkg -l",
+    "description": "列出软件包选择状态和安装版本",
+    "category": "软件包管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "dpkg",
+      "软件包管理"
+    ],
+    "examples": [
+      {
+        "command": "dpkg -l",
+        "description": "列出软件包选择状态和安装版本"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "Debian/Ubuntu"
+    ],
+    "packages": [
+      "dpkg"
+    ],
+    "parameters": [
+      {
+        "name": "-l",
+        "description": "列出软件包"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "dpkg",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.ssh.215f6db3",
+    "command": "ssh 用户名@example.com",
+    "description": "建立到远程主机的交互式 SSH 会话",
+    "category": "远程连接",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ssh",
+      "远程连接"
+    ],
+    "examples": [
+      {
+        "command": "ssh 用户名@example.com",
+        "description": "建立到远程主机的交互式 SSH 会话"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "openssh-client"
+    ],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "指定远程端口"
+      }
+    ],
+    "root_priority": 96,
+    "context_priority": 40,
+    "source": {
+      "manual": "ssh",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.scp.0f100397",
+    "command": "scp 文件名 用户名@example.com:目标目录/",
+    "description": "通过 SSH 复制文件到远程目录",
+    "category": "远程连接",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "scp",
+      "远程连接"
+    ],
+    "examples": [
+      {
+        "command": "scp 文件名 用户名@example.com:目标目录/",
+        "description": "通过 SSH 复制文件到远程目录"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "openssh-client"
+    ],
+    "parameters": [
+      {
+        "name": "-r",
+        "description": "递归复制目录"
+      }
+    ],
+    "root_priority": 94,
+    "context_priority": 40,
+    "source": {
+      "manual": "scp",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.sftp.e30910a5",
+    "command": "sftp 用户名@example.com",
+    "description": "连接远程主机并交互传输文件",
+    "category": "远程连接",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "sftp",
+      "远程连接"
+    ],
+    "examples": [
+      {
+        "command": "sftp 用户名@example.com",
+        "description": "连接远程主机并交互传输文件"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改文件、会话或远端状态，请先核对目标并确认权限。",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "openssh-client"
+    ],
+    "parameters": [
+      {
+        "name": "-P",
+        "description": "指定远程端口"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "sftp",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.f2a29f2b",
+    "command": "git status",
+    "description": "查看当前 Git 仓库状态",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git status",
+        "description": "查看当前 Git 仓库状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--short",
+        "description": "使用简洁状态格式"
+      }
+    ],
+    "root_priority": 100,
+    "context_priority": 100,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.605ccf9a",
+    "command": "git status --short",
+    "description": "以简洁形式查看工作区状态",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git status --short",
+        "description": "以简洁形式查看工作区状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--short",
+        "description": "简洁状态格式"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 80,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.1a1c76a8",
+    "command": "git add .",
+    "description": "将当前目录的修改加入暂存区",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git add .",
+        "description": "将当前目录的修改加入暂存区"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": ".",
+        "description": "当前目录下的修改"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 95,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.828f0b63",
+    "command": "git commit -m \"说明\"",
+    "description": "提交暂存区中的修改",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git commit -m \"说明\"",
+        "description": "提交暂存区中的修改"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "-m",
+        "description": "指定提交说明"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 90,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.342eae51",
+    "command": "git log --oneline",
+    "description": "查看简洁版 Git 提交历史",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git log --oneline",
+        "description": "查看简洁版 Git 提交历史"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--oneline",
+        "description": "每个提交显示一行"
+      }
+    ],
+    "root_priority": 99,
+    "context_priority": 85,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.844a3072",
+    "command": "git branch",
+    "description": "列出本地分支并标识当前分支",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git branch",
+        "description": "列出本地分支并标识当前分支"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "同时列出远程跟踪分支"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.4e61f875",
+    "command": "git switch 分支名",
+    "description": "切换工作区到指定分支",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git switch 分支名",
+        "description": "切换工作区到指定分支"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "创建并切换新分支"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.2979220d",
+    "command": "git pull --ff-only",
+    "description": "仅允许快进方式拉取并整合远程提交",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git pull --ff-only",
+        "description": "仅允许快进方式拉取并整合远程提交"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--ff-only",
+        "description": "无法快进时拒绝整合"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.8f6e64c9",
+    "command": "git push",
+    "description": "将本地提交推送到已配置的远程仓库",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git push",
+        "description": "将本地提交推送到已配置的远程仓库"
+      }
+    ],
+    "risk": "high",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--dry-run",
+        "description": "仅预览推送"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.48990e38",
+    "command": "git stash",
+    "description": "保存当前受跟踪文件的工作区与暂存区修改",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git stash",
+        "description": "保存当前受跟踪文件的工作区与暂存区修改"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "-u",
+        "description": "同时包含未跟踪文件"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 75,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.git.b0b4393d",
+    "command": "git stash list",
+    "description": "查看已保存的暂存记录",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git stash list",
+        "description": "查看已保存的暂存记录"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "list",
+        "description": "列出保存记录"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 70,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.a9781b8f",
+    "command": "git diff",
+    "description": "查看工作区相对暂存区的文本差异",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git diff",
+        "description": "查看工作区相对暂存区的文本差异"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--cached",
+        "description": "比较暂存区与 HEAD"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.git.7652ed4e",
+    "command": "git fetch",
+    "description": "获取远程提交和引用而不整合工作区",
+    "category": "Git 常用操作",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "git",
+      "Git 常用操作"
+    ],
+    "examples": [
+      {
+        "command": "git fetch",
+        "description": "获取远程提交和引用而不整合工作区"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会修改暂存区、提交、工作区或远程引用，请核对当前仓库和目标。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需安装 Git；仓库相关命令需在仓库中执行"
+    ],
+    "packages": [
+      "git"
+    ],
+    "parameters": [
+      {
+        "name": "--all",
+        "description": "获取所有已配置远程"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "git",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.alias.cdb6fdbe",
+    "command": "alias",
+    "description": "列出当前 Bash 定义的命令别名",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "alias",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "alias",
+        "description": "列出当前 Bash 定义的命令别名"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "以可重用格式显示别名"
+      }
+    ],
+    "root_priority": 85,
+    "context_priority": 60,
+    "source": {
+      "manual": "alias",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.arch.5a36f117",
+    "command": "arch",
+    "description": "显示当前机器的硬件架构名称",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "arch",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "arch",
+        "description": "显示当前机器的硬件架构名称"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [],
+    "root_priority": 70,
+    "context_priority": 60,
+    "source": {
+      "manual": "arch",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.echo.80578bc7",
+    "command": "echo \"你好 Linux\"",
+    "description": "将字符串输出到标准输出",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "echo",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "echo \"你好 Linux\"",
+        "description": "将字符串输出到标准输出"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "不输出末尾换行"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "echo",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.export.e04e2fda",
+    "command": "export -p",
+    "description": "列出已导出的 Shell 变量",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "export",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "export -p",
+        "description": "列出已导出的 Shell 变量"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-p",
+        "description": "显示可重用的导出声明"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "export",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.history.b9ed0ac4",
+    "command": "history 20",
+    "description": "显示当前 Bash 最近二十条历史记录",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "history",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "history 20",
+        "description": "显示当前 Bash 最近二十条历史记录"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash 交互式会话"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "20",
+        "description": "限制显示条数"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "history",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.help.e3d2aa77",
+    "command": "help cd",
+    "description": "查看 Bash 内置 cd 的用途与参数说明",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "help",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "help cd",
+        "description": "查看 Bash 内置 cd 的用途与参数说明"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-m",
+        "description": "以手册风格显示帮助"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "help",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.type.c3bfe89b",
+    "command": "type -a ls",
+    "description": "显示 Shell 如何解析名称以及所有匹配位置",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "type",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "type -a ls",
+        "description": "显示 Shell 如何解析名称以及所有匹配位置"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "显示所有匹配"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "type",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.read.c335f9e6",
+    "command": "read -r 变量名",
+    "description": "从标准输入读取一行并保存到 Shell 变量",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "read",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "read -r 变量名",
+        "description": "从标准输入读取一行并保存到 Shell 变量"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会改变当前 Shell 指定变量，等待输入时可用 Ctrl-C 取消。",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-r",
+        "description": "不把反斜杠作为转义"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "read",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.printf.f7114b45",
+    "command": "printf '%s\\n' \"你好 Linux\"",
+    "description": "按指定格式输出字符串和换行符",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "printf",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "printf '%s\\n' \"你好 Linux\"",
+        "description": "按指定格式输出字符串和换行符"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "%s",
+        "description": "字符串格式"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "printf",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.command.82c5d550",
+    "command": "command -v python3",
+    "description": "检查命令在当前 Shell 中的解析位置",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "command",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "command -v python3",
+        "description": "检查命令在当前 Shell 中的解析位置"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "-v",
+        "description": "显示解析结果"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "command",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.builtin.065f9b79",
+    "command": "builtin pwd",
+    "description": "绕过同名函数直接调用 Bash 内置 pwd",
+    "category": "Bash 内置命令",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "builtin",
+      "Bash 内置命令"
+    ],
+    "examples": [
+      {
+        "command": "builtin pwd",
+        "description": "绕过同名函数直接调用 Bash 内置 pwd"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "builtin",
+    "environments": [
+      "Linux",
+      "Bash"
+    ],
+    "packages": [],
+    "parameters": [
+      {
+        "name": "builtin",
+        "description": "直接调用内置命令"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "builtin",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.python3.f61bc1ec",
+    "command": "python3 --version",
+    "description": "显示 Python 3 解释器版本",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "python3",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "python3 --version",
+        "description": "显示 Python 3 解释器版本"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "python3"
+    ],
+    "parameters": [
+      {
+        "name": "--version",
+        "description": "显示版本后退出"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "python3",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.make.8a22410f",
+    "command": "make -n",
+    "description": "预览当前 Makefile 将执行的构建配方",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "make",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "make -n",
+        "description": "预览当前 Makefile 将执行的构建配方"
+      }
+    ],
+    "risk": "medium",
+    "warning": "即使 -n 也可能运行递归 make 或含 + 的配方；只在可信项目中使用。",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "make"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "一般只打印配方而不执行"
+      }
+    ],
+    "root_priority": 80,
+    "context_priority": 40,
+    "source": {
+      "manual": "make",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.gcc.d45db8ba",
+    "command": "gcc --version",
+    "description": "显示 GNU C 编译器版本",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gcc",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "gcc --version",
+        "description": "显示 GNU C 编译器版本"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "gcc"
+    ],
+    "parameters": [
+      {
+        "name": "--version",
+        "description": "显示版本"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "gcc",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.env.920f8f58",
+    "command": "env",
+    "description": "显示当前进程环境变量",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "env",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "env",
+        "description": "显示当前进程环境变量"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-i",
+        "description": "使用空环境启动指定程序"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "env",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.file.6de6e1e6",
+    "command": "file 文件名",
+    "description": "识别文件的内容类型",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "file",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "file 文件名",
+        "description": "识别文件的内容类型"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "file"
+    ],
+    "parameters": [
+      {
+        "name": "-b",
+        "description": "不显示文件名"
+      }
+    ],
+    "root_priority": 80,
+    "context_priority": 60,
+    "source": {
+      "manual": "file",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.which.9a9d3c76",
+    "command": "which python3",
+    "description": "根据 PATH 查找 Python 命令的可执行路径",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "which",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "which python3",
+        "description": "根据 PATH 查找 Python 命令的可执行路径"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "debianutils"
+    ],
+    "parameters": [
+      {
+        "name": "-a",
+        "description": "显示所有匹配路径"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "which",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.whereis.24b04ec7",
+    "command": "whereis ls",
+    "description": "查找命令的二进制、源码及手册位置",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "whereis",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "whereis ls",
+        "description": "查找命令的二进制、源码及手册位置"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "util-linux"
+    ],
+    "parameters": [
+      {
+        "name": "-b",
+        "description": "只查二进制文件"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "whereis",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.quota.63d3822b",
+    "command": "quota -s",
+    "description": "以易读单位显示当前用户磁盘配额",
+    "category": "系统与服务管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "quota",
+      "系统与服务管理"
+    ],
+    "examples": [
+      {
+        "command": "quota -s",
+        "description": "以易读单位显示当前用户磁盘配额"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux",
+      "文件系统需配置磁盘配额"
+    ],
+    "packages": [
+      "quota"
+    ],
+    "parameters": [
+      {
+        "name": "-s",
+        "description": "使用易读容量单位"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "quota",
+      "review": "Checked upstream manual distributed by Debian; example not executed",
+      "url": "https://manpages.debian.org/trixie/quota/quota.1.en.html"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.yes.147cccd9",
+    "command": "yes \"确认\"",
+    "description": "持续向标准输出重复指定文本",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "yes",
+      "开发工具"
+    ],
+    "examples": [
+      {
+        "command": "yes \"确认\"",
+        "description": "持续向标准输出重复指定文本"
+      }
+    ],
+    "risk": "medium",
+    "warning": "持续输出会占用终端和资源，按 Ctrl-C 停止；不要随意用于自动回答危险操作。",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "文本",
+        "description": "指定重复输出的内容"
+      }
+    ],
+    "root_priority": 40,
+    "context_priority": 40,
+    "source": {
+      "manual": "yes",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.basename.226e50fa",
+    "command": "basename /路径/文件名",
+    "description": "提取路径的最后一个名称部分",
+    "category": "文件与目录管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "basename",
+      "文件与目录管理"
+    ],
+    "examples": [
+      {
+        "command": "basename /路径/文件名",
+        "description": "提取路径的最后一个名称部分"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-s",
+        "description": "去掉指定后缀"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "basename",
+      "review": "Chinese explanation authored; command examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.od.e09ce041",
+    "command": "od -An -tx1 文件名",
+    "description": "以十六进制逐字节查看文件内容",
+    "category": "文本处理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "od"
+    ],
+    "examples": [
+      {
+        "command": "od -An -tx1 文件名",
+        "description": "以十六进制逐字节查看文件内容"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "external",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "coreutils"
+    ],
+    "parameters": [
+      {
+        "name": "-An",
+        "description": "不显示偏移地址"
+      },
+      {
+        "name": "-tx1",
+        "description": "按单字节十六进制输出"
+      }
+    ],
+    "root_priority": 60,
+    "context_priority": 60,
+    "source": {
+      "manual": "od",
+      "review": "Authored; examples not executed"
+    },
+    "learning_value": 80
+  },
+  {
+    "id": "linux.vim.80eabee7",
+    "command": "vim 文件名",
+    "description": "使用 Vim 编辑器打开并编辑文本文件",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "vim"
+    ],
+    "examples": [
+      {
+        "command": "vim 文件名",
+        "description": "使用 Vim 编辑器打开并编辑文本文件"
+      }
+    ],
+    "risk": "medium",
+    "warning": "编辑保存可能覆盖原文件，请先备份。",
+    "command_type": "developer",
+    "environments": [
+      "Linux"
+    ],
+    "packages": [
+      "vim"
+    ],
+    "parameters": [
+      {
+        "name": "-R",
+        "description": "以只读模式打开"
+      }
+    ],
+    "root_priority": 85,
+    "context_priority": 60,
+    "source": {
+      "manual": "vim",
+      "review": "Authored; examples not executed"
+    },
+    "learning_value": 60
+  },
+  {
+    "id": "linux.docker.d2f4ef24",
+    "command": "docker version",
+    "description": "查看 Docker 客户端和服务器版本",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker version",
+        "description": "查看 Docker 客户端和服务器版本"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "客户端信息仅需 Docker CLI；服务器信息需可访问 Engine",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 90,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/version/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.c59521be",
+    "command": "docker info",
+    "description": "查看 Docker Engine 的系统信息和运行概况",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker info",
+        "description": "查看 Docker Engine 的系统信息和运行概况"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Docker CLI、可访问的 Engine 和相应权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 85,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/system/info/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.30faf94a",
+    "command": "docker ps",
+    "description": "列出正在运行的容器",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker ps",
+        "description": "列出正在运行的容器"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Docker CLI、可访问的 Engine 和相应权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 100,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/ls/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.d3dcad8c",
+    "command": "docker ps -a",
+    "description": "列出包括已停止状态在内的全部容器",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker ps -a",
+        "description": "列出包括已停止状态在内的全部容器"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Docker CLI、可访问的 Engine 和相应权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 80,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/ls/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.57e5029c",
+    "command": "docker images",
+    "description": "列出本机 Docker 镜像",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker images",
+        "description": "列出本机 Docker 镜像"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Docker CLI、可访问的 Engine 和相应权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 95,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/image/ls/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.edef4799",
+    "command": "docker pull 镜像名",
+    "description": "从镜像仓库拉取指定镜像",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker pull 镜像名",
+        "description": "从镜像仓库拉取指定镜像"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会下载并占用镜像存储；确认镜像来源和标签。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine、仓库网络访问及必要的登录权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/image/pull/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.a051581b",
+    "command": "docker run 镜像名",
+    "description": "从指定镜像创建并启动一个新容器",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker run 镜像名",
+        "description": "从指定镜像创建并启动一个新容器"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine、可信镜像及足够资源",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/run/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.a86aa92b",
+    "command": "docker exec -it 容器名 bash",
+    "description": "在运行中的容器里打开交互式 Bash",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker exec -it 容器名 bash",
+        "description": "在运行中的容器里打开交互式 Bash"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "容器必须运行且镜像中存在 bash",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/exec/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.eb57b0b4",
+    "command": "docker logs 容器名",
+    "description": "查看指定容器的标准输出和错误日志",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker logs 容器名",
+        "description": "查看指定容器的标准输出和错误日志"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine 和目标容器",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/logs/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.bb606622",
+    "command": "docker start 容器名",
+    "description": "启动一个已停止的容器",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker start 容器名",
+        "description": "启动一个已停止的容器"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine 和已存在的容器",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/start/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.a2673dcc",
+    "command": "docker stop 容器名",
+    "description": "请求指定容器停止运行",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker stop 容器名",
+        "description": "请求指定容器停止运行"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine 和运行中的容器",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/stop/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.a75daa01",
+    "command": "docker restart 容器名",
+    "description": "停止并重新启动指定容器",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker restart 容器名",
+        "description": "停止并重新启动指定容器"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine 和目标容器",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/restart/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.27d8d0f1",
+    "command": "docker rm 容器名",
+    "description": "删除指定的已停止容器及其可写层",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker rm 容器名",
+        "description": "删除指定的已停止容器及其可写层"
+      }
+    ],
+    "risk": "high",
+    "warning": "会丢失容器可写层；--force 可强制终止运行中的容器，--volumes 还会删除关联匿名卷。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "默认需先停止容器，需 Engine 和删除权限",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/container/rm/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.a06af3a7",
+    "command": "docker inspect 容器名",
+    "description": "查看容器的详细配置和状态",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "container"
+    ],
+    "examples": [
+      {
+        "command": "docker inspect 容器名",
+        "description": "查看容器的详细配置和状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Engine 和目标容器；配置可能包含敏感值",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/inspect/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.24d0b478",
+    "command": "docker compose ps",
+    "description": "列出当前 Compose 项目的服务容器状态",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "compose"
+    ],
+    "examples": [
+      {
+        "command": "docker compose ps",
+        "description": "列出当前 Compose 项目的服务容器状态"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Compose v2 插件、Engine 和 Compose 项目文件",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli",
+      "docker-compose-plugin"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/compose/ps/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.51d30002",
+    "command": "docker compose up -d",
+    "description": "创建或更新 Compose 服务并在后台运行",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "compose"
+    ],
+    "examples": [
+      {
+        "command": "docker compose up -d",
+        "description": "创建或更新 Compose 服务并在后台运行"
+      }
+    ],
+    "risk": "high",
+    "warning": "会运行或中断容器内进程，可能影响挂载数据或服务；先确认目标和镜像来源。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Compose v2 插件、Engine、项目文件及可信镜像",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli",
+      "docker-compose-plugin"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/compose/up/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "linux.docker.7c3af487",
+    "command": "docker compose down",
+    "description": "停止 Compose 服务并移除项目容器和网络",
+    "category": "容器管理",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "docker",
+      "compose"
+    ],
+    "examples": [
+      {
+        "command": "docker compose down",
+        "description": "停止 Compose 服务并移除项目容器和网络"
+      }
+    ],
+    "risk": "high",
+    "warning": "会停止服务并删除项目容器及网络；默认不删除卷，使用 --volumes 会删除相关卷。",
+    "command_type": "developer",
+    "environments": [
+      "Linux",
+      "需要 Compose v2 插件、Engine 和项目文件",
+      "Engine 可在远端；Ubuntu 发行版替代包为 docker.io，Compose v2 为 docker-compose-v2"
+    ],
+    "packages": [
+      "docker-ce-cli",
+      "docker-compose-plugin"
+    ],
+    "parameters": [
+      {
+        "name": "--help",
+        "description": "显示该子命令帮助；不代替上下文参数知识库"
+      }
+    ],
+    "root_priority": 55,
+    "context_priority": 60,
+    "learning_value": 75,
+    "source": {
+      "url": "https://docs.docker.com/reference/cli/docker/compose/down/",
+      "review": "Official CLI reference; commands not executed"
+    }
+  },
+  {
+    "id": "devtools.make.9c1e541f8d",
+    "command": "make -j 4",
+    "description": "以最多 4 个并行配方构建当前可信 Makefile 的默认目标",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "make",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "make -j 4",
+        "description": "以最多 4 个并行配方构建当前可信 Makefile 的默认目标"
+      }
+    ],
+    "risk": "medium",
+    "warning": "将读取 Makefile，可能执行任意配方或展开函数；只在可信项目中使用，可能生成、覆盖或删除文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU Make；当前目录含可信 Makefile"
+    ],
+    "packages": [
+      "make"
+    ],
+    "parameters": [
+      {
+        "name": "-j",
+        "description": "限制并行配方数；执行可信 Makefile，示例为 4，无数值会不限并发",
+        "aliases": [
+          "--jobs"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定 Makefile 并执行其目标；文件必须可信",
+        "aliases": [
+          "--file",
+          "--makefile"
+        ],
+        "value_example": "Makefile"
+      },
+      {
+        "name": "-C",
+        "description": "先进入指定目录，再读取并执行可信 Makefile",
+        "aliases": [
+          "--directory"
+        ],
+        "value_example": "build"
+      },
+      {
+        "name": "-n",
+        "description": "通常只打印配方；递归 make、带 + 配方等仍可能执行",
+        "aliases": [
+          "--just-print",
+          "--dry-run",
+          "--recon"
+        ]
+      },
+      {
+        "name": "-k",
+        "description": "某目标失败后继续处理其他可构建目标",
+        "aliases": [
+          "--keep-going"
+        ]
+      },
+      {
+        "name": "--trace",
+        "description": "显示更新目标的原因及配方跟踪信息；仍会执行构建",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Options-Summary.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.make.43010467fd",
+    "command": "make -f Makefile",
+    "description": "读取指定可信 Makefile，并构建其默认目标",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "make",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "make -f Makefile",
+        "description": "读取指定可信 Makefile，并构建其默认目标"
+      }
+    ],
+    "risk": "medium",
+    "warning": "将读取 Makefile，可能执行任意配方或展开函数；只在可信项目中使用，可能生成、覆盖或删除文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU Make；示例 Makefile 必须实际存在"
+    ],
+    "packages": [
+      "make"
+    ],
+    "parameters": [
+      {
+        "name": "-j",
+        "description": "限制并行配方数；执行可信 Makefile，示例为 4，无数值会不限并发",
+        "aliases": [
+          "--jobs"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定 Makefile 并执行其目标；文件必须可信",
+        "aliases": [
+          "--file",
+          "--makefile"
+        ],
+        "value_example": "Makefile"
+      },
+      {
+        "name": "-C",
+        "description": "先进入指定目录，再读取并执行可信 Makefile",
+        "aliases": [
+          "--directory"
+        ],
+        "value_example": "build"
+      },
+      {
+        "name": "-n",
+        "description": "通常只打印配方；递归 make、带 + 配方等仍可能执行",
+        "aliases": [
+          "--just-print",
+          "--dry-run",
+          "--recon"
+        ]
+      },
+      {
+        "name": "-k",
+        "description": "某目标失败后继续处理其他可构建目标",
+        "aliases": [
+          "--keep-going"
+        ]
+      },
+      {
+        "name": "--trace",
+        "description": "显示更新目标的原因及配方跟踪信息；仍会执行构建",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Options-Summary.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.make.5d4f92e3bc",
+    "command": "make -C build",
+    "description": "进入 build 目录并执行该目录可信 Makefile 的默认目标",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "make",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "make -C build",
+        "description": "进入 build 目录并执行该目录可信 Makefile 的默认目标"
+      }
+    ],
+    "risk": "medium",
+    "warning": "将读取 Makefile，可能执行任意配方或展开函数；只在可信项目中使用，可能生成、覆盖或删除文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU Make；build 目录含可信 Makefile"
+    ],
+    "packages": [
+      "make"
+    ],
+    "parameters": [
+      {
+        "name": "-j",
+        "description": "限制并行配方数；执行可信 Makefile，示例为 4，无数值会不限并发",
+        "aliases": [
+          "--jobs"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定 Makefile 并执行其目标；文件必须可信",
+        "aliases": [
+          "--file",
+          "--makefile"
+        ],
+        "value_example": "Makefile"
+      },
+      {
+        "name": "-C",
+        "description": "先进入指定目录，再读取并执行可信 Makefile",
+        "aliases": [
+          "--directory"
+        ],
+        "value_example": "build"
+      },
+      {
+        "name": "-n",
+        "description": "通常只打印配方；递归 make、带 + 配方等仍可能执行",
+        "aliases": [
+          "--just-print",
+          "--dry-run",
+          "--recon"
+        ]
+      },
+      {
+        "name": "-k",
+        "description": "某目标失败后继续处理其他可构建目标",
+        "aliases": [
+          "--keep-going"
+        ]
+      },
+      {
+        "name": "--trace",
+        "description": "显示更新目标的原因及配方跟踪信息；仍会执行构建",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Options-Summary.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.make.3eb737ac04",
+    "command": "make clean",
+    "description": "执行项目 Makefile 自行定义的 clean 目标，常用于删除构建产物",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "make",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "make clean",
+        "description": "执行项目 Makefile 自行定义的 clean 目标，常用于删除构建产物"
+      }
+    ],
+    "risk": "high",
+    "warning": "clean 的动作完全由项目 Makefile 定义，可能删除文件或执行任意命令；先审阅目标，不能假设只删构建产物。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU Make；项目必须定义 clean 目标，并非所有项目通用"
+    ],
+    "packages": [
+      "make"
+    ],
+    "parameters": [
+      {
+        "name": "-j",
+        "description": "限制并行配方数；执行可信 Makefile，示例为 4，无数值会不限并发",
+        "aliases": [
+          "--jobs"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定 Makefile 并执行其目标；文件必须可信",
+        "aliases": [
+          "--file",
+          "--makefile"
+        ],
+        "value_example": "Makefile"
+      },
+      {
+        "name": "-C",
+        "description": "先进入指定目录，再读取并执行可信 Makefile",
+        "aliases": [
+          "--directory"
+        ],
+        "value_example": "build"
+      },
+      {
+        "name": "-n",
+        "description": "通常只打印配方；递归 make、带 + 配方等仍可能执行",
+        "aliases": [
+          "--just-print",
+          "--dry-run",
+          "--recon"
+        ]
+      },
+      {
+        "name": "-k",
+        "description": "某目标失败后继续处理其他可构建目标",
+        "aliases": [
+          "--keep-going"
+        ]
+      },
+      {
+        "name": "--trace",
+        "description": "显示更新目标的原因及配方跟踪信息；仍会执行构建",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 55,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Options-Summary.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.gcc.3ad2deccd0",
+    "command": "gcc -c app.c",
+    "description": "将 C 源码 app.c 编译为 app.o，不进行链接",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gcc",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "gcc -c app.c",
+        "description": "将 C 源码 app.c 编译为 app.o，不进行链接"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会调用编译工具并生成或覆盖输出文件；请确认源码和工具链可信，不会自动运行生成的程序。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU GCC；需要实际存在的 app.c 及所需头文件"
+    ],
+    "packages": [
+      "gcc"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "只编译和汇编，输出目标文件，不链接",
+        "aliases": []
+      },
+      {
+        "name": "-o",
+        "description": "指定输出文件，可能覆盖同名文件",
+        "aliases": [],
+        "value_example": "app"
+      },
+      {
+        "name": "-Wall",
+        "description": "启用一组常用警告，并非所有警告",
+        "aliases": []
+      },
+      {
+        "name": "-Wextra",
+        "description": "启用 Wall 之外的额外警告",
+        "aliases": []
+      },
+      {
+        "name": "-fsyntax-only",
+        "description": "只进行语法检查，不生成目标文件",
+        "aliases": []
+      },
+      {
+        "name": "-g",
+        "description": "生成调试信息，供调试器使用",
+        "aliases": []
+      },
+      {
+        "name": "-I",
+        "description": "增加头文件搜索目录",
+        "aliases": [],
+        "value_example": "include"
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.gcc.6163ebf187",
+    "command": "gcc app.c -o app",
+    "description": "编译并链接 C 源码，生成 app 程序但不运行",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gcc",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "gcc app.c -o app",
+        "description": "编译并链接 C 源码，生成 app 程序但不运行"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会调用编译工具并生成或覆盖输出文件；请确认源码和工具链可信，不会自动运行生成的程序。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU GCC；需要 app.c、链接器及所需开发库"
+    ],
+    "packages": [
+      "gcc"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "只编译和汇编，输出目标文件，不链接",
+        "aliases": []
+      },
+      {
+        "name": "-o",
+        "description": "指定输出文件，可能覆盖同名文件",
+        "aliases": [],
+        "value_example": "app"
+      },
+      {
+        "name": "-Wall",
+        "description": "启用一组常用警告，并非所有警告",
+        "aliases": []
+      },
+      {
+        "name": "-Wextra",
+        "description": "启用 Wall 之外的额外警告",
+        "aliases": []
+      },
+      {
+        "name": "-fsyntax-only",
+        "description": "只进行语法检查，不生成目标文件",
+        "aliases": []
+      },
+      {
+        "name": "-g",
+        "description": "生成调试信息，供调试器使用",
+        "aliases": []
+      },
+      {
+        "name": "-I",
+        "description": "增加头文件搜索目录",
+        "aliases": [],
+        "value_example": "include"
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.gcc.e7735d10f4",
+    "command": "gcc -Wall -Wextra -fsyntax-only app.c",
+    "description": "启用常用及额外警告，仅检查 C 源码语法",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "gcc",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "gcc -Wall -Wextra -fsyntax-only app.c",
+        "description": "启用常用及额外警告，仅检查 C 源码语法"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU GCC；需要 app.c 和所需头文件"
+    ],
+    "packages": [
+      "gcc"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "只编译和汇编，输出目标文件，不链接",
+        "aliases": []
+      },
+      {
+        "name": "-o",
+        "description": "指定输出文件，可能覆盖同名文件",
+        "aliases": [],
+        "value_example": "app"
+      },
+      {
+        "name": "-Wall",
+        "description": "启用一组常用警告，并非所有警告",
+        "aliases": []
+      },
+      {
+        "name": "-Wextra",
+        "description": "启用 Wall 之外的额外警告",
+        "aliases": []
+      },
+      {
+        "name": "-fsyntax-only",
+        "description": "只进行语法检查，不生成目标文件",
+        "aliases": []
+      },
+      {
+        "name": "-g",
+        "description": "生成调试信息，供调试器使用",
+        "aliases": []
+      },
+      {
+        "name": "-I",
+        "description": "增加头文件搜索目录",
+        "aliases": [],
+        "value_example": "include"
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.gpp.13021899d4",
+    "command": "g++ app.cpp -o app",
+    "description": "编译并链接 C++ 源码，生成 app 程序但不运行",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "g++",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "g++ app.cpp -o app",
+        "description": "编译并链接 C++ 源码，生成 app 程序但不运行"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会调用编译工具并生成或覆盖输出文件；请确认源码和工具链可信，不会自动运行生成的程序。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GNU G++；需要 app.cpp 和 C++ 开发工具链"
+    ],
+    "packages": [
+      "g++"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "只编译和汇编，输出目标文件，不链接",
+        "aliases": []
+      },
+      {
+        "name": "-o",
+        "description": "指定输出文件，可能覆盖同名文件",
+        "aliases": [],
+        "value_example": "app"
+      },
+      {
+        "name": "-Wall",
+        "description": "启用一组常用警告，并非所有警告",
+        "aliases": []
+      },
+      {
+        "name": "-Wextra",
+        "description": "启用 Wall 之外的额外警告",
+        "aliases": []
+      },
+      {
+        "name": "-fsyntax-only",
+        "description": "只进行语法检查，不生成目标文件",
+        "aliases": []
+      },
+      {
+        "name": "-g",
+        "description": "生成调试信息，供调试器使用",
+        "aliases": []
+      },
+      {
+        "name": "-I",
+        "description": "增加头文件搜索目录",
+        "aliases": [],
+        "value_example": "include"
+      },
+      {
+        "name": "-std=c++17",
+        "description": "选择 C++17 语言标准，需 GCC 7 或更新版本",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.gpp.d52d5e1446",
+    "command": "g++ -std=c++17 -Wall -Wextra app.cpp -o app",
+    "description": "按 C++17 标准编译 C++ 程序，并启用常用及额外警告",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "g++",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "g++ -std=c++17 -Wall -Wextra app.cpp -o app",
+        "description": "按 C++17 标准编译 C++ 程序，并启用常用及额外警告"
+      }
+    ],
+    "risk": "medium",
+    "warning": "会调用编译工具并生成或覆盖输出文件；请确认源码和工具链可信，不会自动运行生成的程序。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "GCC 7+ 的 G++；需要 app.cpp 和 C++ 标准库"
+    ],
+    "packages": [
+      "g++"
+    ],
+    "parameters": [
+      {
+        "name": "-c",
+        "description": "只编译和汇编，输出目标文件，不链接",
+        "aliases": []
+      },
+      {
+        "name": "-o",
+        "description": "指定输出文件，可能覆盖同名文件",
+        "aliases": [],
+        "value_example": "app"
+      },
+      {
+        "name": "-Wall",
+        "description": "启用一组常用警告，并非所有警告",
+        "aliases": []
+      },
+      {
+        "name": "-Wextra",
+        "description": "启用 Wall 之外的额外警告",
+        "aliases": []
+      },
+      {
+        "name": "-fsyntax-only",
+        "description": "只进行语法检查，不生成目标文件",
+        "aliases": []
+      },
+      {
+        "name": "-g",
+        "description": "生成调试信息，供调试器使用",
+        "aliases": []
+      },
+      {
+        "name": "-I",
+        "description": "增加头文件搜索目录",
+        "aliases": [],
+        "value_example": "include"
+      },
+      {
+        "name": "-std=c++17",
+        "description": "选择 C++17 语言标准，需 GCC 7 或更新版本",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Invoking-G_002b_002b.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.cmake.ac83124182",
+    "command": "cmake -S . -B build",
+    "description": "从当前源码目录配置项目，将生成的构建系统写入 build",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cmake",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "cmake -S . -B build",
+        "description": "从当前源码目录配置项目，将生成的构建系统写入 build"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "CMake 3.13+；可信 CMakeLists.txt、编译器和可用生成器"
+    ],
+    "packages": [
+      "cmake"
+    ],
+    "parameters": [
+      {
+        "name": "-S",
+        "description": "指定包含 CMakeLists.txt 的可信源码目录；配置可能执行命令",
+        "aliases": [],
+        "value_example": "."
+      },
+      {
+        "name": "-B",
+        "description": "指定构建目录；配置会创建或修改构建文件",
+        "aliases": [],
+        "value_example": "build"
+      },
+      {
+        "name": "-G",
+        "description": "选择构建系统生成器；示例 Ninja 需安装 ninja-build",
+        "aliases": [],
+        "value_example": "Ninja"
+      },
+      {
+        "name": "-D",
+        "description": "定义 CMake 缓存变量；示例为 Debug 构建类型",
+        "aliases": [],
+        "value_example": "CMAKE_BUILD_TYPE=Debug"
+      },
+      {
+        "name": "--build",
+        "description": "调用已配置目录的构建工具；会执行项目构建命令",
+        "aliases": [],
+        "value_example": "build"
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://cmake.org/cmake/help/v3.31/manual/cmake.1.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.cmake.8729de05f9",
+    "command": "cmake -S . -B build -G Ninja",
+    "description": "使用 Ninja 生成器配置可信项目，构建文件写入 build",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cmake",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "cmake -S . -B build -G Ninja",
+        "description": "使用 Ninja 生成器配置可信项目，构建文件写入 build"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "CMake 3.13+、ninja-build；可信 CMakeLists.txt 和编译器"
+    ],
+    "packages": [
+      "cmake",
+      "ninja-build"
+    ],
+    "parameters": [
+      {
+        "name": "-S",
+        "description": "指定包含 CMakeLists.txt 的可信源码目录；配置可能执行命令",
+        "aliases": [],
+        "value_example": "."
+      },
+      {
+        "name": "-B",
+        "description": "指定构建目录；配置会创建或修改构建文件",
+        "aliases": [],
+        "value_example": "build"
+      },
+      {
+        "name": "-G",
+        "description": "选择构建系统生成器；示例 Ninja 需安装 ninja-build",
+        "aliases": [],
+        "value_example": "Ninja"
+      },
+      {
+        "name": "-D",
+        "description": "定义 CMake 缓存变量；示例为 Debug 构建类型",
+        "aliases": [],
+        "value_example": "CMAKE_BUILD_TYPE=Debug"
+      },
+      {
+        "name": "--build",
+        "description": "调用已配置目录的构建工具；会执行项目构建命令",
+        "aliases": [],
+        "value_example": "build"
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://cmake.org/cmake/help/v3.31/manual/cmake.1.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.cmake.213f7d0e4c",
+    "command": "cmake --build build",
+    "description": "调用 build 中已配置的构建工具构建项目",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cmake",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "cmake --build build",
+        "description": "调用 build 中已配置的构建工具构建项目"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "CMake；build 必须是已配置构建目录，并安装相应后端"
+    ],
+    "packages": [
+      "cmake"
+    ],
+    "parameters": [
+      {
+        "name": "--parallel",
+        "description": "限制并行构建进程数，CMake 3.12+",
+        "aliases": [
+          "-j"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "--target",
+        "description": "构建项目实际定义的目标；app 仅为示例",
+        "aliases": [
+          "-t"
+        ],
+        "value_example": "app"
+      },
+      {
+        "name": "--config",
+        "description": "为多配置生成器选择配置；单配置生成器主要在配置阶段决定",
+        "aliases": [],
+        "value_example": "Debug"
+      },
+      {
+        "name": "--verbose",
+        "description": "输出构建工具执行的命令，CMake 3.14+",
+        "aliases": [
+          "-v"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://cmake.org/cmake/help/v3.31/manual/cmake.1.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.cmake.d9085d88e0",
+    "command": "cmake --build build --parallel 4",
+    "description": "通过 CMake 以最多 4 个并行任务构建已配置项目",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cmake",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "cmake --build build --parallel 4",
+        "description": "通过 CMake 以最多 4 个并行任务构建已配置项目"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "CMake 3.12+；build 已配置并安装相应构建后端"
+    ],
+    "packages": [
+      "cmake"
+    ],
+    "parameters": [
+      {
+        "name": "--parallel",
+        "description": "限制并行构建进程数，CMake 3.12+",
+        "aliases": [
+          "-j"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "--target",
+        "description": "构建项目实际定义的目标；app 仅为示例",
+        "aliases": [
+          "-t"
+        ],
+        "value_example": "app"
+      },
+      {
+        "name": "--config",
+        "description": "为多配置生成器选择配置；单配置生成器主要在配置阶段决定",
+        "aliases": [],
+        "value_example": "Debug"
+      },
+      {
+        "name": "--verbose",
+        "description": "输出构建工具执行的命令，CMake 3.14+",
+        "aliases": [
+          "-v"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://cmake.org/cmake/help/v3.31/manual/cmake.1.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.cmake.d62d39ce46",
+    "command": "cmake --build build --target app",
+    "description": "通过 CMake 构建项目实际定义的 app 目标",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "cmake",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "cmake --build build --target app",
+        "description": "通过 CMake 构建项目实际定义的 app 目标"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "CMake；已配置的 build 目录，且项目必须定义 app 目标"
+    ],
+    "packages": [
+      "cmake"
+    ],
+    "parameters": [
+      {
+        "name": "--parallel",
+        "description": "限制并行构建进程数，CMake 3.12+",
+        "aliases": [
+          "-j"
+        ],
+        "value_example": "4"
+      },
+      {
+        "name": "--target",
+        "description": "构建项目实际定义的目标；app 仅为示例",
+        "aliases": [
+          "-t"
+        ],
+        "value_example": "app"
+      },
+      {
+        "name": "--config",
+        "description": "为多配置生成器选择配置；单配置生成器主要在配置阶段决定",
+        "aliases": [],
+        "value_example": "Debug"
+      },
+      {
+        "name": "--verbose",
+        "description": "输出构建工具执行的命令，CMake 3.14+",
+        "aliases": [
+          "-v"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://cmake.org/cmake/help/v3.31/manual/cmake.1.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.ninja.aff7562fa5",
+    "command": "ninja -C build",
+    "description": "进入 build 目录，按可信 build.ninja 执行构建",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ninja",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "ninja -C build",
+        "description": "进入 build 目录，按可信 build.ninja 执行构建"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "ninja-build；build 目录含已生成的可信 build.ninja"
+    ],
+    "packages": [
+      "ninja-build"
+    ],
+    "parameters": [
+      {
+        "name": "-C",
+        "description": "先进入含 build.ninja 的可信构建目录",
+        "aliases": [],
+        "value_example": "build"
+      },
+      {
+        "name": "-j",
+        "description": "限制并行构建任务数；0 表示不限数量",
+        "aliases": [],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定可信 Ninja 构建文件",
+        "aliases": [],
+        "value_example": "build.ninja"
+      },
+      {
+        "name": "-n",
+        "description": "预览构建命令而不执行它们",
+        "aliases": []
+      },
+      {
+        "name": "-v",
+        "description": "构建时显示完整命令行；仍会执行构建命令",
+        "aliases": [
+          "--verbose"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://ninja-build.org/manual.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.ninja.4b80333360",
+    "command": "ninja -j 4",
+    "description": "按当前可信 build.ninja 以最多 4 个任务并行构建",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ninja",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "ninja -j 4",
+        "description": "按当前可信 build.ninja 以最多 4 个任务并行构建"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "ninja-build；当前目录含可信 build.ninja"
+    ],
+    "packages": [
+      "ninja-build"
+    ],
+    "parameters": [
+      {
+        "name": "-C",
+        "description": "先进入含 build.ninja 的可信构建目录",
+        "aliases": [],
+        "value_example": "build"
+      },
+      {
+        "name": "-j",
+        "description": "限制并行构建任务数；0 表示不限数量",
+        "aliases": [],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定可信 Ninja 构建文件",
+        "aliases": [],
+        "value_example": "build.ninja"
+      },
+      {
+        "name": "-n",
+        "description": "预览构建命令而不执行它们",
+        "aliases": []
+      },
+      {
+        "name": "-v",
+        "description": "构建时显示完整命令行；仍会执行构建命令",
+        "aliases": [
+          "--verbose"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://ninja-build.org/manual.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.ninja.c71c515ca7",
+    "command": "ninja -v",
+    "description": "执行当前可信 Ninja 构建，并显示完整构建命令",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "ninja",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "ninja -v",
+        "description": "执行当前可信 Ninja 构建，并显示完整构建命令"
+      }
+    ],
+    "risk": "medium",
+    "warning": "只在可信项目中配置或构建；项目配置、构建规则可能执行程序并生成或覆盖文件。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "ninja-build；当前目录含可信 build.ninja"
+    ],
+    "packages": [
+      "ninja-build"
+    ],
+    "parameters": [
+      {
+        "name": "-C",
+        "description": "先进入含 build.ninja 的可信构建目录",
+        "aliases": [],
+        "value_example": "build"
+      },
+      {
+        "name": "-j",
+        "description": "限制并行构建任务数；0 表示不限数量",
+        "aliases": [],
+        "value_example": "4"
+      },
+      {
+        "name": "-f",
+        "description": "读取指定可信 Ninja 构建文件",
+        "aliases": [],
+        "value_example": "build.ninja"
+      },
+      {
+        "name": "-n",
+        "description": "预览构建命令而不执行它们",
+        "aliases": []
+      },
+      {
+        "name": "-v",
+        "description": "构建时显示完整命令行；仍会执行构建命令",
+        "aliases": [
+          "--verbose"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://ninja-build.org/manual.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.bash.4217761a5e",
+    "command": "bash -n script.sh",
+    "description": "只读取并检查 Bash 脚本语法，不执行脚本正文",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "bash",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "bash -n script.sh",
+        "description": "只读取并检查 Bash 脚本语法，不执行脚本正文"
+      }
+    ],
+    "risk": "low",
+    "warning": "Bash 启动可能读取 BASH_ENV；检查不可信脚本前还应确认启动环境可信。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "Bash；script.sh 必须存在；不是对脚本安全性或逻辑正确性的保证"
+    ],
+    "packages": [
+      "bash"
+    ],
+    "parameters": [
+      {
+        "name": "-n",
+        "description": "读取但不执行脚本正文，进行语法检查；等价形式为 -o noexec",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.bash.f3ae44f684",
+    "command": "bash -x script.sh",
+    "description": "执行 Bash 脚本，并输出展开后的命令用于跟踪调试",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "bash",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "bash -x script.sh",
+        "description": "执行 Bash 脚本，并输出展开后的命令用于跟踪调试"
+      }
+    ],
+    "risk": "high",
+    "warning": "会实际执行脚本全部行为，可能修改或删除文件；跟踪输出还可能泄露密码、令牌等展开后的参数。",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "Bash；script.sh 必须存在且可信"
+    ],
+    "packages": [
+      "bash"
+    ],
+    "parameters": [
+      {
+        "name": "-x",
+        "description": "执行时打印展开后的命令及参数；等价形式为 -o xtrace",
+        "aliases": []
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  },
+  {
+    "id": "devtools.shellcheck.d4d060303a",
+    "command": "shellcheck script.sh",
+    "description": "静态检查 Shell 脚本中的常见语法、引用和可移植性问题",
+    "category": "开发工具",
+    "platform": "linux",
+    "shell": [
+      "bash"
+    ],
+    "tags": [
+      "shellcheck",
+      "开发工具",
+      "phase4"
+    ],
+    "examples": [
+      {
+        "command": "shellcheck script.sh",
+        "description": "静态检查 Shell 脚本中的常见语法、引用和可移植性问题"
+      }
+    ],
+    "risk": "low",
+    "warning": "",
+    "command_type": "developer",
+    "environments": [
+      "Linux Bash",
+      "需安装 shellcheck；script.sh 必须存在；未指定方言时按脚本信息推断"
+    ],
+    "packages": [
+      "shellcheck"
+    ],
+    "parameters": [
+      {
+        "name": "--shell",
+        "description": "指定分析使用的 Shell 方言",
+        "aliases": [
+          "-s"
+        ],
+        "value_example": "bash"
+      },
+      {
+        "name": "--severity",
+        "description": "设置报告的最低严重级别",
+        "aliases": [
+          "-S"
+        ],
+        "value_example": "warning"
+      },
+      {
+        "name": "--format",
+        "description": "选择检查结果输出格式",
+        "aliases": [
+          "-f"
+        ],
+        "value_example": "tty"
+      },
+      {
+        "name": "--external-sources",
+        "description": "静态分析时读取 source 引用文件，不执行脚本；注意文件访问范围",
+        "aliases": [
+          "-x"
+        ]
+      }
+    ],
+    "root_priority": 65,
+    "context_priority": 75,
+    "learning_value": 85,
+    "source": {
+      "url": "https://github.com/koalaman/shellcheck/blob/master/shellcheck.1.md",
+      "review": "2026-11-05：依据官方文档及已安装工具帮助核实；示例未执行"
+    }
+  }
+]

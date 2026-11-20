@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "max_candidates": 4,
+  "idle_delay_ms": 15,
+  "menu_maxlines": 20,
+  "backend": "persistent-python",
+  "shell": "bash",
+  "platform": "linux"
+}
